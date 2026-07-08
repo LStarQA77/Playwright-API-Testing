@@ -36,5 +36,9 @@ test('create new product', async ({ request }) => {
     });
     const body = await response.json();
     expect(body.title, 'confirms the title of the newly created product').toBe('LStar New Test Product');
+    expect(body.description, 'description of newly created product matches submitted description').toBe('This is a new product from LStar');
     expect(body.id, 'confirms the id of the newly created product').toBe(195);
+
+    // note that add product does not actually create a product but returns a hardcoded response with your title but hardcoded product ID
+
 });
